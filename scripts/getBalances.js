@@ -1,4 +1,4 @@
-require('./diagnostics');
+require('../utils/evm/diagnostics');
 const { ethers } = require('hardhat');
 
 (async () => {

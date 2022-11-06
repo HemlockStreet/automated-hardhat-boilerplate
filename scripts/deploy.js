@@ -1,4 +1,4 @@
-require('./diagnostics');
+require('../utils/evm/diagnostics');
 const hre = require('hardhat');
 const deployment = require('../utils/evm/deployment');
 
