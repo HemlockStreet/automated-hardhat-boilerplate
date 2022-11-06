@@ -1,3 +1,4 @@
+require('./diagnostics');
 const { ethers } = require('hardhat');
 
 (async () => {
