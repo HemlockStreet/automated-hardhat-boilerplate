@@ -3,20 +3,17 @@ const EvmConfig = require('./utils/classes/EvmConfig/EvmConfig');
 
 // EvmConfig(
 //   printToConsole = false,
-//   gasReporterArgs = [
-//     enabled = true,
-//     excludeContracts = [],
-//     outputFile = undefined,
-//     currency = 'USD',
-//   ],
-//   solidityArgs = [
-//     version = '0.8.17',
-//     optimizer = {
-//       enabled: true,
-//       runs: 200,
+//   reporterArgs = {
+//     enabled: true,
+//     currency: 'USD',
+//     excludeContracts: [],
+//   },
+//   solidityArgs = {
+//     version: '0.8.17',
+//     settings: {
+//       optimizer: { enabled: true, runs: 200 },
 //     },
-//     otherSettings = {},
-//   ]
+//   }
 // );
 
 module.exports = { ...new EvmConfig(true) };
