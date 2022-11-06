@@ -47,7 +47,7 @@ const credentials = {
 };
 
 // BASIC CREDENTIAL DIAGNOSTICS
-const verifiable = (name) => credentials[name].scanner;
+const verifiable = (name) => credentials[name]?.scanner;
 const deployable = (name) => credentials[name].provider;
 
 function getCredentials(printToConsole) {

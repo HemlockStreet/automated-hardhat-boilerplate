@@ -13,7 +13,7 @@ const defaultSol = {
   },
 };
 
-class EvmConfig {
+class Config {
   constructor(printToConsole, reporterArgs, solidityArgs) {
     const { etherscan, networks, coinmarketcap } =
       getCredentials(printToConsole);
@@ -67,4 +67,4 @@ class EvmConfig {
   }
 }
 
-module.exports = EvmConfig;
+module.exports = Config;

@@ -1,7 +1,12 @@
 require('@nomicfoundation/hardhat-toolbox');
-const EvmConfig = require('./utils/classes/EvmConfig/EvmConfig');
+const Config = require('./utils/evm/Config');
+const fs = require('fs');
 
-// EvmConfig(
+if (!fs.existsSync(`./utils/deploymentMap`))
+  fs.mkdirSync('./utils/deploymentMap');
+if (!fs.existsSync(`./utils/interfaces`)) fs.mkdirSync('./utils/interfaces');
+
+// Config(
 //   printToConsole = false,
 //   reporterArgs = {
 //     enabled: true,
@@ -16,4 +21,4 @@ const EvmConfig = require('./utils/classes/EvmConfig/EvmConfig');
 //   }
 // );
 
-module.exports = { ...new EvmConfig(true) };
+module.exports = { ...new Config() };

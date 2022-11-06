@@ -10,3 +10,5 @@ package-lock.json
 cache
 artifacts
 
+**/31337.json
+**/1337.json

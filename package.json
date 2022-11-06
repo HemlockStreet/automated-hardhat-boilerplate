@@ -1,6 +1,7 @@
 {
   "name": "hardhat-project",
   "scripts": {
+    "diagnostics": "npx hardhat run ./scripts/diagnostics.js",
     "test": "npx hardhat test",
     "deploy": "npx hardhat run ./scripts/deploy.js",
     "deployTo": "npx hardhat run ./scripts/deploy.js --network",

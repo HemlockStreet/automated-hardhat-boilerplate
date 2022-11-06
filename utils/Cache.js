@@ -20,6 +20,13 @@ class Cache {
     fs.writeFileSync(this.pathTo, this.prepare(cache));
   }
 
+  replace(key, value) {
+    this.remove(key);
+    let data = {};
+    data[key] = value;
+    this.update(data);
+  }
+
   remove(key) {
     let cache = this.load();
     delete cache[key];
