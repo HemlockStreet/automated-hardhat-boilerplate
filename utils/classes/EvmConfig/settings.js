@@ -1,5 +1,3 @@
-const { coinmarketcap } = require('./credentials');
-
 const solidity = (
   version = '0.8.17',
   optimizer = { enabled: true, runs: 200 },
@@ -18,7 +16,8 @@ const gasReporter = (
   enabled = true,
   excludeContracts = [],
   outputFile,
-  currency = 'USD'
+  currency = 'USD',
+  coinmarketcap
 ) => {
   let settings = {
     enabled,

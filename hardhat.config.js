@@ -2,6 +2,7 @@ require('@nomicfoundation/hardhat-toolbox');
 const EvmConfig = require('./utils/classes/EvmConfig/EvmConfig');
 
 // EvmConfig(
+//   printToConsole = false,
 //   gasReporterArgs = [
 //     enabled = true,
 //     excludeContracts = [],
@@ -18,4 +19,4 @@ const EvmConfig = require('./utils/classes/EvmConfig/EvmConfig');
 //   ]
 // );
 
-module.exports = { ...new EvmConfig() };
+module.exports = { ...new EvmConfig(true) };
