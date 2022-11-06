@@ -5,7 +5,7 @@ const { ethers } = require('hardhat');
   for await (const signer of signers) {
     console.log(
       signer.address,
-      parseInt((await ethers.providers.getBalance(signer.address)).toString())
+      parseInt((await ethers.provider.getBalance(signer.address)).toString())
     );
   }
 })();

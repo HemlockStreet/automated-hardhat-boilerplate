@@ -23,24 +23,12 @@ async function runDeployment(name, chainId, args = []) {
 }
 
 async function verify(tx, options, chainId) {
-  console.log(
-    `|||| Awaiting 60 Seconds or 5 Confirmations... Whichever is last...`
-  );
-  let confirmations = 0;
-  let diff = 0;
-  let start = Date.now();
-  while ((confirmations < 5 && diff > 60) || diff < 60) {
-    const receipt = await tx.wait();
-    if (receipt.status !== 1) throw new Error('tx failure', receipt);
-    confirmations++;
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    diff = Math.floor((Date.now() - start) / 1000);
-  }
-
+  await tx.wait();
+  await new Promise((resolve) => setTimeout(resolve, 15000));
   try {
-    console.log('Verifying...');
+    console.log('|| Verifying...');
     await hre.run('verify:verify', options);
-    console.log('|||||| Verified!');
+    console.log('|||| Verified!');
   } catch (e) {
     const reason = e.toString().split('\n')[2];
     if (reason === 'Reason: Already Verified')
@@ -49,7 +37,7 @@ async function verify(tx, options, chainId) {
       reason ===
       `Reason: The Etherscan API responded that the address ${options.address} does not have bytecode.`
     ) {
-      console.log('|||||| Contract not indexed, re-verifying...');
+      console.log('|||| Contract not indexed, re-verifying...');
       await verify(tx, options, chainId);
     } else throw e;
   }
@@ -63,7 +51,7 @@ async function andVerify(name, chainId, args = [], fqn) {
 
   const options = {
     address: NewContract.address,
-    constructorArguments: args,
+    constructorArguments: args.filter((arg) => typeof arg !== typeof {}),
     contract: fqn ? fqn : undefined,
   };
 
