@@ -1,6 +1,21 @@
-require("@nomicfoundation/hardhat-toolbox");
+require('@nomicfoundation/hardhat-toolbox');
+const EvmConfig = require('./utils/classes/EvmConfig/EvmConfig');
 
-/** @type import('hardhat/config').HardhatUserConfig */
-module.exports = {
-  solidity: "0.8.9",
-};
+// EvmConfig(
+//   gasReporterArgs = [
+//     enabled = true,
+//     excludeContracts = [],
+//     outputFile = undefined,
+//     currency = 'USD',
+//   ],
+//   solidityArgs = [
+//     version = '0.8.17',
+//     optimizer = {
+//       enabled: true,
+//       runs: 200,
+//     },
+//     otherSettings = {},
+//   ]
+// );
+
+module.exports = { ...new EvmConfig() };
