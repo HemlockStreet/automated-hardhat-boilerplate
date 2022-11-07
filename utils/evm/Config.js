@@ -47,23 +47,23 @@ class Config {
             : defaultSol.settings,
         };
 
-    if (printToConsole) {
-      console.log(`|| Settings\n|||| gasReporter:`);
-      Object.keys(this.gasReporter).forEach((key) => {
-        const value = this.gasReporter[key];
-        if (key !== 'coinmarketcap') console.log(`|||||| ${key}: ${value}`);
-      });
-      console.log('|||| solidity');
-      Object.keys(this.solidity).forEach((key) => {
-        const value = this.solidity[key];
-        console.log(
-          `|||||| ${key}: ${
-            typeof value === typeof {} ? JSON.stringify(value) : value
-          }`
-        );
-      });
-      console.log('\nEvmConfig Prepared!\n');
-    }
+    // if (printToConsole) {
+    //   console.log(`|| Settings\n|||| gasReporter:`);
+    //   Object.keys(this.gasReporter).forEach((key) => {
+    //     const value = this.gasReporter[key];
+    //     if (key !== 'coinmarketcap') console.log(`|||||| ${key}: ${value}`);
+    //   });
+    //   console.log('|||| solidity');
+    //   Object.keys(this.solidity).forEach((key) => {
+    //     const value = this.solidity[key];
+    //     console.log(
+    //       `|||||| ${key}: ${
+    //         typeof value === typeof {} ? JSON.stringify(value) : value
+    //       }`
+    //     );
+    //   });
+    //   console.log('\nEvmConfig Prepared!\n');
+    // }
   }
 }
 
