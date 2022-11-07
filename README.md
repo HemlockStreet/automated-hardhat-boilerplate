@@ -25,8 +25,9 @@ Deployments:
 
 and where to find them...
 
-- https://etherscan.io/
-- https://polygonscan.com/
-- https://bscscan.com/
-- https://ftmscan.com/
-- https://snowtrace.io/
+- [COINMARKETCAP_API_KEY](https://pro.coinmarketcap.com/)
+- [ETHERSCAN](https://etherscan.io/)
+- [POLYGONSCAN](https://polygonscan.com/)
+- [BSCSCAN](https://bscscan.com/)
+- [FTMSCAN](https://ftmscan.com/)
+- [SNOWTRACE](https://snowtrace.io/)
